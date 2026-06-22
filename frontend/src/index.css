@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background-color: #0a0a0f;
+  color: #e8e8f5;
+  overscroll-behavior: none;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  touch-action: manipulation;
+}
+
+::selection {
+  background: #3fd0ff;
+  color: #0a0a0f;
+}
+
+.arena-bg {
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(63, 208, 255, 0.08), transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(255, 90, 122, 0.08), transparent 50%);
+}
+
+.hp-bar-fill {
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.action-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.action-card:active {
+  transform: scale(0.95);
+}
+
+@media (hover: hover) {
+  .action-card:hover:not(:disabled) {
+    transform: translateY(-3px);
+  }
+}
